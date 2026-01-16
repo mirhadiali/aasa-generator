@@ -221,7 +221,7 @@ export default function AasaGenerator() {
           <div className={styles.codeBlock}>
             {jsonOutput}
           </div>
-          <button onClick={downloadAasa} className="primary-btn styles.downloadBtn" style={{ width: '100%' }}>
+          <button onClick={downloadAasa} className={`primary-btn ${styles.downloadBtn}`} style={{ width: '100%' }}>
             Download AASA File
           </button>
           <p style={{ marginTop: '16px', fontSize: '12px', opacity: 0.6, textAlign: 'center' }}>
