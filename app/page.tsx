@@ -106,7 +106,7 @@ export default function Home() {
       <section id="contact" style={{ textAlign: 'center', marginBottom: '80px' }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '48px' }}>Let&apos;s Build Together</h2>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
-          <Link href="/mirhadiali" target="_blank" className="glass" style={{
+          <Link href="https://linkedin.com/in/mirhadiali" target="_blank" className="glass" style={{
             padding: '24px 48px',
             borderRadius: '20px',
             textDecoration: 'none',
