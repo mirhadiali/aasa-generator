@@ -55,9 +55,6 @@ export default function Home() {
         </div>
       </section>
 
-      <footer style={{ textAlign: 'center', opacity: 0.5, fontSize: '0.9rem', paddingBottom: '40px' }}>
-        <p>&copy; {new Date().getFullYear()} Apple Universal Link Support Tool</p>
-      </footer>
     </main>
   );
 }
