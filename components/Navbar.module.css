@@ -28,6 +28,7 @@
 .links {
     display: flex;
     gap: 24px;
+    align-items: center;
 }
 
 .link {
@@ -40,4 +41,24 @@
 
 .link:hover {
     opacity: 1;
+}
+
+.coffeeBtn {
+    background: #ffdd00;
+    color: #000 !important;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 1 !important;
+}
+
+.coffeeBtn:hover {
+    background: #ffea00;
+    transform: translateY(-1px);
 }

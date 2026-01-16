@@ -55,7 +55,7 @@ export default function Home() {
             </ul>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <a href="mailto:hadi.kudcs@gmail.com" className="glass" style={{
+            <Link href="https://linkedin.com/in/mirhadiali" target="_blank" className="glass" style={{
               padding: '20px 40px',
               borderRadius: '40px',
               color: 'white',
@@ -67,7 +67,7 @@ export default function Home() {
               border: '1px solid rgba(255,255,255,0.3)'
             }}>
               Hire Me →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -139,6 +139,8 @@ export default function Home() {
             </svg>
             <p style={{ fontSize: '1.25rem', fontWeight: 600 }}>GitHub</p>
           </Link>
+
+
         </div>
       </section>
 
