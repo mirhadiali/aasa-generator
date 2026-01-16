@@ -106,7 +106,8 @@ export default function AasaGenerator() {
 
   const downloadAasa = () => {
     const element = document.createElement("a");
-    const file = new Blob([jsonOutput], { type: 'application/json' });
+    // Using application/octet-stream to prevent browsers from automatically adding .json extension
+    const file = new Blob([jsonOutput], { type: 'application/octet-stream' });
     element.href = URL.createObjectURL(file);
     element.download = "apple-app-site-association";
     document.body.appendChild(element);
@@ -127,7 +128,7 @@ export default function AasaGenerator() {
             <h2 className={styles.sectionTitle}>App Configurations</h2>
             <button onClick={addApp} className="secondary-btn">+ Add App</button>
           </div>
-          
+
           <p className={styles.description}>
             Enter your Apple Team ID and Bundle ID. Define the paths that should trigger your app to open.
           </p>
@@ -144,18 +145,18 @@ export default function AasaGenerator() {
               <div className={styles.generatorGrid} style={{ gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                 <div className={styles.fieldGroup}>
                   <label className={styles.fieldLabel}>Team ID (e.g. ABCDE12345)</label>
-                  <input 
-                    type="text" 
-                    value={app.teamId} 
+                  <input
+                    type="text"
+                    value={app.teamId}
                     onChange={(e) => updateApp(app.id, 'teamId', e.target.value)}
                     placeholder="ABCDE12345"
                   />
                 </div>
                 <div className={styles.fieldGroup}>
                   <label className={styles.fieldLabel}>Bundle ID (e.g. com.company.app)</label>
-                  <input 
-                    type="text" 
-                    value={app.bundleId} 
+                  <input
+                    type="text"
+                    value={app.bundleId}
                     onChange={(e) => updateApp(app.id, 'bundleId', e.target.value)}
                     placeholder="com.example.app"
                   />
@@ -167,28 +168,28 @@ export default function AasaGenerator() {
                 {app.components.map((comp, compIdx) => (
                   <div key={compIdx} className={styles.pathRow}>
                     <div style={{ flex: 2 }}>
-                      <label className={styles.fieldLabel} style={{fontSize: '10px'}}>Path (e.g. /help/*)</label>
-                      <input 
-                        type="text" 
-                        value={comp["/"]} 
+                      <label className={styles.fieldLabel} style={{ fontSize: '10px' }}>Path (e.g. /help/*)</label>
+                      <input
+                        type="text"
+                        value={comp["/"]}
                         onChange={(e) => updateComponent(app.id, compIdx, '/', e.target.value)}
                         placeholder="/"
                       />
                     </div>
                     <div style={{ flex: 1 }}>
-                      <label className={styles.fieldLabel} style={{fontSize: '10px'}}>Comment</label>
-                      <input 
-                        type="text" 
-                        value={comp.comment} 
+                      <label className={styles.fieldLabel} style={{ fontSize: '10px' }}>Comment</label>
+                      <input
+                        type="text"
+                        value={comp.comment}
                         onChange={(e) => updateComponent(app.id, compIdx, 'comment', e.target.value)}
                         placeholder="Optional"
                       />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '60px' }}>
-                      <label className={styles.fieldLabel} style={{fontSize: '10px'}}>Exclude</label>
-                      <input 
-                        type="checkbox" 
-                        checked={comp.exclude || false} 
+                      <label className={styles.fieldLabel} style={{ fontSize: '10px' }}>Exclude</label>
+                      <input
+                        type="checkbox"
+                        checked={comp.exclude || false}
                         onChange={(e) => updateComponent(app.id, compIdx, 'exclude', e.target.checked)}
                         style={{ width: '20px', height: '20px' }}
                       />
@@ -198,9 +199,9 @@ export default function AasaGenerator() {
                     )}
                   </div>
                 ))}
-                <button 
-                  onClick={() => addComponent(app.id)} 
-                  className="secondary-btn" 
+                <button
+                  onClick={() => addComponent(app.id)}
+                  className="secondary-btn"
                   style={{ marginTop: '10px', fontSize: '13px' }}
                 >
                   + Add Path
